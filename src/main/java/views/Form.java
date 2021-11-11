@@ -43,10 +43,12 @@ public class Form extends javax.swing.JFrame {
         tabEntidades = new javax.swing.JPanel();
         entitySpritesProps = new javax.swing.JTabbedPane();
         entitySprites = new javax.swing.JPanel();
+        cbEntitySprites = new javax.swing.JComboBox<>();
         entityProps = new javax.swing.JPanel();
         tabTiles = new javax.swing.JPanel();
         tilesSpritesProps = new javax.swing.JTabbedPane();
         tileSprites = new javax.swing.JPanel();
+        cbTileSprites = new javax.swing.JComboBox<>();
         tileProps = new javax.swing.JPanel();
         canvasArea = new javax.swing.JPanel();
 
@@ -143,11 +145,17 @@ public class Form extends javax.swing.JFrame {
         entitySprites.setLayout(entitySpritesLayout);
         entitySpritesLayout.setHorizontalGroup(
             entitySpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
+            .addGroup(entitySpritesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbEntitySprites, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         entitySpritesLayout.setVerticalGroup(
             entitySpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 472, Short.MAX_VALUE)
+            .addGroup(entitySpritesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbEntitySprites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         entitySpritesProps.addTab("Sprites", entitySprites);
@@ -189,11 +197,17 @@ public class Form extends javax.swing.JFrame {
         tileSprites.setLayout(tileSpritesLayout);
         tileSpritesLayout.setHorizontalGroup(
             tileSpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 215, Short.MAX_VALUE)
+            .addGroup(tileSpritesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbTileSprites, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tileSpritesLayout.setVerticalGroup(
             tileSpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 472, Short.MAX_VALUE)
+            .addGroup(tileSpritesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cbTileSprites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(439, Short.MAX_VALUE))
         );
 
         tilesSpritesProps.addTab("Sprites", tileSprites);
@@ -330,6 +344,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton btIniciar;
     private javax.swing.JButton btParar;
     private javax.swing.JPanel canvasArea;
+    private javax.swing.JComboBox<String> cbEntitySprites;
+    private javax.swing.JComboBox<String> cbTileSprites;
     private javax.swing.JPanel entityProps;
     private javax.swing.JPanel entitySprites;
     private javax.swing.JTabbedPane entitySpritesProps;
