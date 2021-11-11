@@ -6,6 +6,7 @@
 package views;
 
 import elements.Canvas;
+import java.io.File;
 
 /**
  *
@@ -44,11 +45,15 @@ public class Form extends javax.swing.JFrame {
         entitySpritesProps = new javax.swing.JTabbedPane();
         entitySprites = new javax.swing.JPanel();
         cbEntitySprites = new javax.swing.JComboBox<>();
+        entitySpriteScroll = new javax.swing.JScrollPane();
+        entitySpriteList = new javax.swing.JList<>();
         entityProps = new javax.swing.JPanel();
         tabTiles = new javax.swing.JPanel();
         tilesSpritesProps = new javax.swing.JTabbedPane();
         tileSprites = new javax.swing.JPanel();
         cbTileSprites = new javax.swing.JComboBox<>();
+        tileSpriteScroll = new javax.swing.JScrollPane();
+        tileSpriteList = new javax.swing.JList<>();
         tileProps = new javax.swing.JPanel();
         canvasArea = new javax.swing.JPanel();
 
@@ -141,6 +146,8 @@ public class Form extends javax.swing.JFrame {
 
         tabEntidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
 
+        entitySpriteScroll.setViewportView(entitySpriteList);
+
         javax.swing.GroupLayout entitySpritesLayout = new javax.swing.GroupLayout(entitySprites);
         entitySprites.setLayout(entitySpritesLayout);
         entitySpritesLayout.setHorizontalGroup(
@@ -149,13 +156,18 @@ public class Form extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(cbEntitySprites, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(entitySpritesLayout.createSequentialGroup()
+                .addComponent(entitySpriteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         entitySpritesLayout.setVerticalGroup(
             entitySpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(entitySpritesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cbEntitySprites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(439, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(entitySpriteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         entitySpritesProps.addTab("Sprites", entitySprites);
@@ -193,6 +205,8 @@ public class Form extends javax.swing.JFrame {
 
         tabTiles.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
 
+        tileSpriteScroll.setViewportView(tileSpriteList);
+
         javax.swing.GroupLayout tileSpritesLayout = new javax.swing.GroupLayout(tileSprites);
         tileSprites.setLayout(tileSpritesLayout);
         tileSpritesLayout.setHorizontalGroup(
@@ -201,13 +215,18 @@ public class Form extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(cbTileSprites, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(tileSpritesLayout.createSequentialGroup()
+                .addComponent(tileSpriteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         tileSpritesLayout.setVerticalGroup(
             tileSpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tileSpritesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(cbTileSprites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(439, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tileSpriteScroll, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tilesSpritesProps.addTab("Sprites", tileSprites);
@@ -347,6 +366,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbEntitySprites;
     private javax.swing.JComboBox<String> cbTileSprites;
     private javax.swing.JPanel entityProps;
+    private javax.swing.JList<File> entitySpriteList;
+    private javax.swing.JScrollPane entitySpriteScroll;
     private javax.swing.JPanel entitySprites;
     private javax.swing.JTabbedPane entitySpritesProps;
     private javax.swing.JLabel lbHeight;
@@ -358,6 +379,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTextField tfHight;
     private javax.swing.JTextField tfWidth;
     private javax.swing.JPanel tileProps;
+    private javax.swing.JList<File> tileSpriteList;
+    private javax.swing.JScrollPane tileSpriteScroll;
     private javax.swing.JPanel tileSprites;
     private javax.swing.JTabbedPane tilesSpritesProps;
     // End of variables declaration//GEN-END:variables
