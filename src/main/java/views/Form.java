@@ -6,6 +6,7 @@
 package views;
 
 import elements.Canvas;
+import elements.Funcs;
 import java.io.File;
 
 /**
@@ -14,11 +15,25 @@ import java.io.File;
  */
 public class Form extends javax.swing.JFrame {
     private Canvas canvas;
+    private final File[] entities = Funcs.loadPath("assets/entities");
+    private File entity;
+    private final File[] tiles = Funcs.loadPath("assets/tiles");
+    private File tile;
+    
     /**
      * Creates new form Form
      */
     public Form() {
         initComponents();
+        
+        for (File e : entities) {
+            cbEntitySprites.addItem(e.getName());
+        }
+        
+        for (File t : tiles) {
+            cbTileSprites.addItem(t.getName());
+        }
+        
         canvas = new Canvas();
         canvasArea.add(canvas);
     }
