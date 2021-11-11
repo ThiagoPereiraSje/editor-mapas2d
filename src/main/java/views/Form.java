@@ -34,6 +34,9 @@ public class Form extends javax.swing.JFrame {
             cbTileSprites.addItem(t.getName());
         }
         
+        entitySpriteList.setCellRenderer(new ImageListRenderer());
+        tileSpriteList.setCellRenderer(new ImageListRenderer());
+        
         canvas = new Canvas();
         canvasArea.add(canvas);
     }
@@ -161,6 +164,12 @@ public class Form extends javax.swing.JFrame {
 
         tabEntidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
 
+        cbEntitySprites.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEntitySpritesActionPerformed(evt);
+            }
+        });
+
         entitySpriteScroll.setViewportView(entitySpriteList);
 
         javax.swing.GroupLayout entitySpritesLayout = new javax.swing.GroupLayout(entitySprites);
@@ -219,6 +228,12 @@ public class Form extends javax.swing.JFrame {
         tabPanel.addTab("Entidades", tabEntidades);
 
         tabTiles.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+
+        cbTileSprites.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTileSpritesActionPerformed(evt);
+            }
+        });
 
         tileSpriteScroll.setViewportView(tileSpriteList);
 
@@ -337,6 +352,16 @@ public class Form extends javax.swing.JFrame {
         btCriar.setEnabled(false);
         btParar.setEnabled(true);
     }//GEN-LAST:event_btIniciarActionPerformed
+
+    private void cbEntitySpritesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEntitySpritesActionPerformed
+        entity = entities[cbEntitySprites.getSelectedIndex()];
+        entitySpriteList.setListData(entity.listFiles());
+    }//GEN-LAST:event_cbEntitySpritesActionPerformed
+
+    private void cbTileSpritesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTileSpritesActionPerformed
+        tile = tiles[cbTileSprites.getSelectedIndex()];
+        tileSpriteList.setListData(tile.listFiles());
+    }//GEN-LAST:event_cbTileSpritesActionPerformed
 
     /**
      * @param args the command line arguments
