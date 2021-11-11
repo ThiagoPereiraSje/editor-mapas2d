@@ -54,6 +54,7 @@ public class Form extends javax.swing.JFrame {
         setTitle("Form");
         setName("form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(1324, 640));
+        setResizable(false);
         setSize(new java.awt.Dimension(1324, 640));
 
         tabMap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
@@ -67,10 +68,27 @@ public class Form extends javax.swing.JFrame {
         tfHight.setText("50");
 
         btCriar.setText("Criar");
+        btCriar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCriarActionPerformed(evt);
+            }
+        });
 
         btIniciar.setText("Iniciar");
+        btIniciar.setEnabled(false);
+        btIniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btIniciarActionPerformed(evt);
+            }
+        });
 
         btParar.setText("Parar");
+        btParar.setEnabled(false);
+        btParar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPararActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tabMapLayout = new javax.swing.GroupLayout(tabMap);
         tabMap.setLayout(tabMapLayout);
@@ -246,6 +264,31 @@ public class Form extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btCriarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCriarActionPerformed
+        int width = Integer.parseInt(tfWidth.getText()) * 32;
+        int height = Integer.parseInt(tfHight.getText()) * 32;
+        
+        canvas.createMap(width, height);
+        canvas.start();
+        btIniciar.setEnabled(false);
+        btCriar.setEnabled(false);
+        btParar.setEnabled(true);
+    }//GEN-LAST:event_btCriarActionPerformed
+
+    private void btPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPararActionPerformed
+        canvas.stop();
+        btIniciar.setEnabled(true);
+        btCriar.setEnabled(false);
+        btParar.setEnabled(false);
+    }//GEN-LAST:event_btPararActionPerformed
+
+    private void btIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIniciarActionPerformed
+        canvas.start();
+        btIniciar.setEnabled(false);
+        btCriar.setEnabled(false);
+        btParar.setEnabled(true);
+    }//GEN-LAST:event_btIniciarActionPerformed
 
     /**
      * @param args the command line arguments

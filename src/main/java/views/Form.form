@@ -8,6 +8,7 @@
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1324, 640]"/>
     </Property>
+    <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1324, 640]"/>
     </Property>
@@ -157,16 +158,27 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Criar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCriarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btIniciar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Iniciar"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btIniciarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btParar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Parar"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btPararActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
