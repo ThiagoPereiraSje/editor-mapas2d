@@ -33,7 +33,13 @@ public class Form extends javax.swing.JFrame {
 
         tabPanel = new javax.swing.JTabbedPane();
         tabEntidades = new javax.swing.JPanel();
+        entitySpritesProps = new javax.swing.JTabbedPane();
+        entitySprites = new javax.swing.JPanel();
+        entityProps = new javax.swing.JPanel();
         tabTiles = new javax.swing.JPanel();
+        tilesSpritesProps = new javax.swing.JTabbedPane();
+        tileSprites = new javax.swing.JPanel();
+        tileProps = new javax.swing.JPanel();
         canvasArea = new javax.swing.JPanel();
         menuBar = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
@@ -48,28 +54,94 @@ public class Form extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1324, 640));
         setSize(new java.awt.Dimension(1324, 640));
 
+        tabEntidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+
+        javax.swing.GroupLayout entitySpritesLayout = new javax.swing.GroupLayout(entitySprites);
+        entitySprites.setLayout(entitySpritesLayout);
+        entitySpritesLayout.setHorizontalGroup(
+            entitySpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 215, Short.MAX_VALUE)
+        );
+        entitySpritesLayout.setVerticalGroup(
+            entitySpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 567, Short.MAX_VALUE)
+        );
+
+        entitySpritesProps.addTab("Sprites", entitySprites);
+
+        javax.swing.GroupLayout entityPropsLayout = new javax.swing.GroupLayout(entityProps);
+        entityProps.setLayout(entityPropsLayout);
+        entityPropsLayout.setHorizontalGroup(
+            entityPropsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 215, Short.MAX_VALUE)
+        );
+        entityPropsLayout.setVerticalGroup(
+            entityPropsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 567, Short.MAX_VALUE)
+        );
+
+        entitySpritesProps.addTab("Propriedades", entityProps);
+
         javax.swing.GroupLayout tabEntidadesLayout = new javax.swing.GroupLayout(tabEntidades);
         tabEntidades.setLayout(tabEntidadesLayout);
         tabEntidadesLayout.setHorizontalGroup(
             tabEntidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 219, Short.MAX_VALUE)
+            .addGroup(tabEntidadesLayout.createSequentialGroup()
+                .addComponent(entitySpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         tabEntidadesLayout.setVerticalGroup(
             tabEntidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(tabEntidadesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(entitySpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabPanel.addTab("Entidades", tabEntidades);
+
+        tabTiles.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+
+        javax.swing.GroupLayout tileSpritesLayout = new javax.swing.GroupLayout(tileSprites);
+        tileSprites.setLayout(tileSpritesLayout);
+        tileSpritesLayout.setHorizontalGroup(
+            tileSpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 215, Short.MAX_VALUE)
+        );
+        tileSpritesLayout.setVerticalGroup(
+            tileSpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 567, Short.MAX_VALUE)
+        );
+
+        tilesSpritesProps.addTab("Sprites", tileSprites);
+
+        javax.swing.GroupLayout tilePropsLayout = new javax.swing.GroupLayout(tileProps);
+        tileProps.setLayout(tilePropsLayout);
+        tilePropsLayout.setHorizontalGroup(
+            tilePropsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 215, Short.MAX_VALUE)
+        );
+        tilePropsLayout.setVerticalGroup(
+            tilePropsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 567, Short.MAX_VALUE)
+        );
+
+        tilesSpritesProps.addTab("Propriedades", tileProps);
 
         javax.swing.GroupLayout tabTilesLayout = new javax.swing.GroupLayout(tabTiles);
         tabTiles.setLayout(tabTilesLayout);
         tabTilesLayout.setHorizontalGroup(
             tabTilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 219, Short.MAX_VALUE)
+            .addGroup(tabTilesLayout.createSequentialGroup()
+                .addComponent(tilesSpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         tabTilesLayout.setVerticalGroup(
             tabTilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(tabTilesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(tilesSpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         tabPanel.addTab("Tiles", tabTiles);
@@ -194,6 +266,9 @@ public class Form extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel canvasArea;
+    private javax.swing.JPanel entityProps;
+    private javax.swing.JPanel entitySprites;
+    private javax.swing.JTabbedPane entitySpritesProps;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuFile;
     private javax.swing.JMenuItem menuIniciar;
@@ -203,5 +278,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JPanel tabEntidades;
     private javax.swing.JTabbedPane tabPanel;
     private javax.swing.JPanel tabTiles;
+    private javax.swing.JPanel tileProps;
+    private javax.swing.JPanel tileSprites;
+    private javax.swing.JTabbedPane tilesSpritesProps;
     // End of variables declaration//GEN-END:variables
 }
