@@ -32,6 +32,7 @@ public class Form extends javax.swing.JFrame {
     private void initComponents() {
 
         tabPanel = new javax.swing.JTabbedPane();
+        tabMap = new javax.swing.JPanel();
         tabEntidades = new javax.swing.JPanel();
         entitySpritesProps = new javax.swing.JTabbedPane();
         entitySprites = new javax.swing.JPanel();
@@ -53,6 +54,21 @@ public class Form extends javax.swing.JFrame {
         setName("form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(1324, 640));
         setSize(new java.awt.Dimension(1324, 640));
+
+        tabMap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
+
+        javax.swing.GroupLayout tabMapLayout = new javax.swing.GroupLayout(tabMap);
+        tabMap.setLayout(tabMapLayout);
+        tabMapLayout.setHorizontalGroup(
+            tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 217, Short.MAX_VALUE)
+        );
+        tabMapLayout.setVerticalGroup(
+            tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 570, Short.MAX_VALUE)
+        );
+
+        tabPanel.addTab("Mapa", tabMap);
 
         tabEntidades.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
 
@@ -276,6 +292,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JMenu menuNovo;
     private javax.swing.JMenuItem menuParar;
     private javax.swing.JPanel tabEntidades;
+    private javax.swing.JPanel tabMap;
     private javax.swing.JTabbedPane tabPanel;
     private javax.swing.JPanel tabTiles;
     private javax.swing.JPanel tileProps;
