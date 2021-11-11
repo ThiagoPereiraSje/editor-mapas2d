@@ -8,6 +8,7 @@ package views;
 import elements.Canvas;
 import elements.Funcs;
 import java.io.File;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -170,6 +171,11 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        entitySpriteList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                entitySpriteListValueChanged(evt);
+            }
+        });
         entitySpriteScroll.setViewportView(entitySpriteList);
 
         javax.swing.GroupLayout entitySpritesLayout = new javax.swing.GroupLayout(entitySprites);
@@ -235,6 +241,11 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        tileSpriteList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                tileSpriteListValueChanged(evt);
+            }
+        });
         tileSpriteScroll.setViewportView(tileSpriteList);
 
         javax.swing.GroupLayout tileSpritesLayout = new javax.swing.GroupLayout(tileSprites);
@@ -362,6 +373,22 @@ public class Form extends javax.swing.JFrame {
         tile = tiles[cbTileSprites.getSelectedIndex()];
         tileSpriteList.setListData(tile.listFiles());
     }//GEN-LAST:event_cbTileSpritesActionPerformed
+
+    private void entitySpriteListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_entitySpriteListValueChanged
+        File f = entitySpriteList.getSelectedValue();
+        
+        if (f != null) {
+            JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
+        }
+    }//GEN-LAST:event_entitySpriteListValueChanged
+
+    private void tileSpriteListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_tileSpriteListValueChanged
+        File f = tileSpriteList.getSelectedValue();
+        
+        if (f != null) {
+            JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
+        }
+    }//GEN-LAST:event_tileSpriteListValueChanged
 
     /**
      * @param args the command line arguments
