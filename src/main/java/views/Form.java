@@ -33,6 +33,13 @@ public class Form extends javax.swing.JFrame {
 
         tabPanel = new javax.swing.JTabbedPane();
         tabMap = new javax.swing.JPanel();
+        lbWidth = new javax.swing.JLabel();
+        tfWidth = new javax.swing.JTextField();
+        lbHeight = new javax.swing.JLabel();
+        tfHight = new javax.swing.JTextField();
+        btCriar = new javax.swing.JButton();
+        btIniciar = new javax.swing.JButton();
+        btParar = new javax.swing.JButton();
         tabEntidades = new javax.swing.JPanel();
         entitySpritesProps = new javax.swing.JTabbedPane();
         entitySprites = new javax.swing.JPanel();
@@ -51,15 +58,63 @@ public class Form extends javax.swing.JFrame {
 
         tabMap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 51)));
 
+        lbWidth.setText("Largura:");
+
+        tfWidth.setText("50");
+
+        lbHeight.setText("Altura:");
+
+        tfHight.setText("50");
+
+        btCriar.setText("Criar");
+
+        btIniciar.setText("Iniciar");
+
+        btParar.setText("Parar");
+
         javax.swing.GroupLayout tabMapLayout = new javax.swing.GroupLayout(tabMap);
         tabMap.setLayout(tabMapLayout);
         tabMapLayout.setHorizontalGroup(
             tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 217, Short.MAX_VALUE)
+            .addGroup(tabMapLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbHeight)
+                    .addComponent(lbWidth))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabMapLayout.createSequentialGroup()
+                        .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfHight, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(tfWidth))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(tabMapLayout.createSequentialGroup()
+                        .addComponent(btIniciar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btParar)
+                        .addGap(39, 39, 39))))
         );
         tabMapLayout.setVerticalGroup(
             tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
+            .addGroup(tabMapLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(tabMapLayout.createSequentialGroup()
+                        .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbWidth)
+                            .addComponent(tfWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbHeight)
+                            .addComponent(tfHight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btCriar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btParar)
+                    .addComponent(btIniciar))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
 
         tabPanel.addTab("Mapa", tabMap);
@@ -228,14 +283,21 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btCriar;
+    private javax.swing.JButton btIniciar;
+    private javax.swing.JButton btParar;
     private javax.swing.JPanel canvasArea;
     private javax.swing.JPanel entityProps;
     private javax.swing.JPanel entitySprites;
     private javax.swing.JTabbedPane entitySpritesProps;
+    private javax.swing.JLabel lbHeight;
+    private javax.swing.JLabel lbWidth;
     private javax.swing.JPanel tabEntidades;
     private javax.swing.JPanel tabMap;
     private javax.swing.JTabbedPane tabPanel;
     private javax.swing.JPanel tabTiles;
+    private javax.swing.JTextField tfHight;
+    private javax.swing.JTextField tfWidth;
     private javax.swing.JPanel tileProps;
     private javax.swing.JPanel tileSprites;
     private javax.swing.JTabbedPane tilesSpritesProps;
