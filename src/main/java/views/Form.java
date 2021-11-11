@@ -42,12 +42,6 @@ public class Form extends javax.swing.JFrame {
         tileSprites = new javax.swing.JPanel();
         tileProps = new javax.swing.JPanel();
         canvasArea = new javax.swing.JPanel();
-        menuBar = new javax.swing.JMenuBar();
-        menuFile = new javax.swing.JMenu();
-        menuNovo = new javax.swing.JMenu();
-        menuMapa = new javax.swing.JMenuItem();
-        menuIniciar = new javax.swing.JMenuItem();
-        menuParar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form");
@@ -80,7 +74,7 @@ public class Form extends javax.swing.JFrame {
         );
         entitySpritesLayout.setVerticalGroup(
             entitySpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addGap(0, 472, Short.MAX_VALUE)
         );
 
         entitySpritesProps.addTab("Sprites", entitySprites);
@@ -93,7 +87,7 @@ public class Form extends javax.swing.JFrame {
         );
         entityPropsLayout.setVerticalGroup(
             entityPropsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addGap(0, 472, Short.MAX_VALUE)
         );
 
         entitySpritesProps.addTab("Propriedades", entityProps);
@@ -110,7 +104,7 @@ public class Form extends javax.swing.JFrame {
             tabEntidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabEntidadesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(entitySpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(entitySpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -126,7 +120,7 @@ public class Form extends javax.swing.JFrame {
         );
         tileSpritesLayout.setVerticalGroup(
             tileSpritesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addGap(0, 472, Short.MAX_VALUE)
         );
 
         tilesSpritesProps.addTab("Sprites", tileSprites);
@@ -139,7 +133,7 @@ public class Form extends javax.swing.JFrame {
         );
         tilePropsLayout.setVerticalGroup(
             tilePropsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 567, Short.MAX_VALUE)
+            .addGap(0, 472, Short.MAX_VALUE)
         );
 
         tilesSpritesProps.addTab("Propriedades", tileProps);
@@ -156,7 +150,7 @@ public class Form extends javax.swing.JFrame {
             tabTilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabTilesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tilesSpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tilesSpritesProps, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -175,40 +169,6 @@ public class Form extends javax.swing.JFrame {
             .addGap(0, 608, Short.MAX_VALUE)
         );
 
-        menuFile.setText("File");
-
-        menuNovo.setText("Novo");
-
-        menuMapa.setText("Mapa");
-        menuMapa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuMapaActionPerformed(evt);
-            }
-        });
-        menuNovo.add(menuMapa);
-
-        menuFile.add(menuNovo);
-
-        menuIniciar.setText("Iniciar");
-        menuIniciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuIniciarActionPerformed(evt);
-            }
-        });
-        menuFile.add(menuIniciar);
-
-        menuParar.setText("Parar");
-        menuParar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuPararActionPerformed(evt);
-            }
-        });
-        menuFile.add(menuParar);
-
-        menuBar.add(menuFile);
-
-        setJMenuBar(menuBar);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -225,25 +185,12 @@ public class Form extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tabPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(canvasArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 8, Short.MAX_VALUE))
+                .addGap(0, 29, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void menuMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuMapaActionPerformed
-        canvas.createMap(32*50, 32*50);
-        canvas.start();
-    }//GEN-LAST:event_menuMapaActionPerformed
-
-    private void menuIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuIniciarActionPerformed
-        canvas.start();
-    }//GEN-LAST:event_menuIniciarActionPerformed
-
-    private void menuPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuPararActionPerformed
-        canvas.stop();
-    }//GEN-LAST:event_menuPararActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,12 +232,6 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JPanel entityProps;
     private javax.swing.JPanel entitySprites;
     private javax.swing.JTabbedPane entitySpritesProps;
-    private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenu menuFile;
-    private javax.swing.JMenuItem menuIniciar;
-    private javax.swing.JMenuItem menuMapa;
-    private javax.swing.JMenu menuNovo;
-    private javax.swing.JMenuItem menuParar;
     private javax.swing.JPanel tabEntidades;
     private javax.swing.JPanel tabMap;
     private javax.swing.JTabbedPane tabPanel;
