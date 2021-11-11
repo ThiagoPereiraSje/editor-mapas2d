@@ -7,6 +7,8 @@ package views;
 
 import elements.Canvas;
 import elements.Funcs;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import javax.swing.JOptionPane;
 
@@ -37,6 +39,24 @@ public class Form extends javax.swing.JFrame {
         
         entitySpriteList.setCellRenderer(new ImageListRenderer());
         tileSpriteList.setCellRenderer(new ImageListRenderer());
+        
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                int option = JOptionPane.showConfirmDialog(
+                    canvas, 
+                    "Deseja salvar o Mapa?",
+                    "Atenção", 
+                    JOptionPane.YES_NO_OPTION);
+			
+                if (option == JOptionPane.YES_OPTION) {
+                    String fileName = JOptionPane.showInputDialog("Nome do arquivo:");
+
+                    if(fileName.isEmpty())
+                        fileName = "mapa01";
+                }
+            }
+        });
         
         canvas = new Canvas();
         canvasArea.add(canvas);
