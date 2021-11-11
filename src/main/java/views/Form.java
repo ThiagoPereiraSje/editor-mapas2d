@@ -27,21 +27,88 @@ public class Form extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tabPanel = new javax.swing.JTabbedPane();
+        tabEntidades = new javax.swing.JPanel();
+        tabTiles = new javax.swing.JPanel();
+        canvas = new views.Canvas();
+        menuBar = new javax.swing.JMenuBar();
+        menuFile = new javax.swing.JMenu();
+        menuNovo = new javax.swing.JMenu();
+        menuMapa = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Form");
         setName("form"); // NOI18N
         setPreferredSize(new java.awt.Dimension(1324, 640));
         setSize(new java.awt.Dimension(1324, 640));
 
+        javax.swing.GroupLayout tabEntidadesLayout = new javax.swing.GroupLayout(tabEntidades);
+        tabEntidades.setLayout(tabEntidadesLayout);
+        tabEntidadesLayout.setHorizontalGroup(
+            tabEntidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 219, Short.MAX_VALUE)
+        );
+        tabEntidadesLayout.setVerticalGroup(
+            tabEntidadesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+        );
+
+        tabPanel.addTab("Entidades", tabEntidades);
+
+        javax.swing.GroupLayout tabTilesLayout = new javax.swing.GroupLayout(tabTiles);
+        tabTiles.setLayout(tabTilesLayout);
+        tabTilesLayout.setHorizontalGroup(
+            tabTilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 219, Short.MAX_VALUE)
+        );
+        tabTilesLayout.setVerticalGroup(
+            tabTilesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+        );
+
+        tabPanel.addTab("Tiles", tabTiles);
+
+        javax.swing.GroupLayout canvasLayout = new javax.swing.GroupLayout(canvas);
+        canvas.setLayout(canvasLayout);
+        canvasLayout.setHorizontalGroup(
+            canvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1088, Short.MAX_VALUE)
+        );
+        canvasLayout.setVerticalGroup(
+            canvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 608, Short.MAX_VALUE)
+        );
+
+        menuFile.setText("File");
+
+        menuNovo.setText("Novo");
+
+        menuMapa.setText("Mapa");
+        menuNovo.add(menuMapa);
+
+        menuFile.add(menuNovo);
+
+        menuBar.add(menuFile);
+
+        setJMenuBar(menuBar);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 924, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(tabPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(canvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 332, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tabPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(canvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -83,5 +150,13 @@ public class Form extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private views.Canvas canvas;
+    private javax.swing.JMenuBar menuBar;
+    private javax.swing.JMenu menuFile;
+    private javax.swing.JMenuItem menuMapa;
+    private javax.swing.JMenu menuNovo;
+    private javax.swing.JPanel tabEntidades;
+    private javax.swing.JTabbedPane tabPanel;
+    private javax.swing.JPanel tabTiles;
     // End of variables declaration//GEN-END:variables
 }
