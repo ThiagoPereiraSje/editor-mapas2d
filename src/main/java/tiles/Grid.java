@@ -21,6 +21,9 @@ public class Grid extends Tile {
     
     @Override
     public void render(Graphics g) {
+        g.setColor(Color.BLACK);
+        g.fillRect(x - Camera.x, y - Camera.y, size, size);
+        
         g.setColor(Color.GRAY);
         g.drawRect(x - Camera.x, y - Camera.y, size, size);
     }

@@ -7,9 +7,9 @@ package elements;
 
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import javax.swing.ImageIcon;
+import tiles.Grid;
 
 /**
  *
@@ -19,7 +19,10 @@ public class Inventory {
     public static ItemType itemType = ItemType.TILE;
     public static File itemSelected;
     
-    public static void tick() {   
+    public static void tick() {
+        if (itemSelected == null)
+            return;
+        
         if (Mouse.leftButton) {
             Mouse.leftButton = false;
 
@@ -34,7 +37,8 @@ public class Inventory {
 
             int xx = mx/Tile.size;
             int yy = my/Tile.size;
-
+            
+            
             if (itemType == ItemType.TILE) {
                 Image sprite = new ImageIcon(itemSelected.getPath()).getImage();
 
@@ -43,10 +47,32 @@ public class Inventory {
                     yy *Tile.size, 
                     sprite
                 );
-
             } else if (itemType == ItemType.ENTITY) {
             }
-        }        
+                        
+        } else if (Mouse.rightButton) {
+            Mouse.rightButton = false;
+            
+            int mx = (int)((Mouse.x) + Camera.x);
+            int my = (int)((Mouse.y) + Camera.y);
+            
+            if (mx > Map.w_vts)
+                return;
+
+            if (my > Map.h_vts)
+                return;
+            
+            int xx = mx/Tile.size;
+            int yy = my/Tile.size;
+            
+            if (itemType == ItemType.TILE) {
+                Map.tiles[xx + (yy*Map.width)] = new Grid(
+                    xx *Tile.size,
+                    yy *Tile.size
+                );
+            } else if (itemType == ItemType.ENTITY) {
+            }
+        }
     }
     
     public static void render(Graphics g) {
