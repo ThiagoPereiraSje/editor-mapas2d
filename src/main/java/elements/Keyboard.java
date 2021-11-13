@@ -18,7 +18,8 @@ public class Keyboard extends KeyAdapter {
     public static boolean right = false;
     public static boolean attack = false;
     public static boolean menu = false;
-    public static boolean del = false;
+    public static boolean ctrl = false;
+    public static boolean shift = false;
     
     private void toggleKey(int keyCode) {
     	up = (KeyEvent.VK_UP == keyCode);
@@ -27,16 +28,31 @@ public class Keyboard extends KeyAdapter {
     	right = (KeyEvent.VK_RIGHT == keyCode);
     	attack = (KeyEvent.VK_X == keyCode);
     	menu = (KeyEvent.VK_ESCAPE == keyCode);
-        del = (KeyEvent.VK_DELETE == keyCode);
     }
     
     @Override
     public void keyPressed(KeyEvent e) {
         toggleKey(e.getKeyCode());
+        
+        if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+            ctrl = true;
+        }
+        
+        if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+            shift = true;
+        }
     }
     
     @Override
     public void keyReleased(KeyEvent e) {
         toggleKey(-1);
+        
+        if (e.getKeyCode() == KeyEvent.VK_CONTROL) {
+            ctrl = false;
+        }
+        
+        if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+            shift = false;
+        }
     }
 }

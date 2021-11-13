@@ -84,7 +84,7 @@ public class Canvas extends java.awt.Canvas implements Runnable{
     @Override
     public void run() {
         long lastTime = System.nanoTime();
-        double amountOfTicks = 60.0;
+        double amountOfTicks = 20;//60.0;
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
         double timer = System.currentTimeMillis();
