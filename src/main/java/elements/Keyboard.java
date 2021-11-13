@@ -18,6 +18,7 @@ public class Keyboard extends KeyAdapter {
     public static boolean right = false;
     public static boolean attack = false;
     public static boolean menu = false;
+    public static boolean del = false;
     
     private void toggleKey(int keyCode) {
     	up = (KeyEvent.VK_UP == keyCode);
@@ -26,6 +27,7 @@ public class Keyboard extends KeyAdapter {
     	right = (KeyEvent.VK_RIGHT == keyCode);
     	attack = (KeyEvent.VK_X == keyCode);
     	menu = (KeyEvent.VK_ESCAPE == keyCode);
+        del = (KeyEvent.VK_DELETE == keyCode);
     }
     
     @Override
