@@ -16,6 +16,10 @@ public class World {
     
     public static void render(Graphics g) {
         tileRender(g);
+        
+        for (int i = 0; i < Map.entities.size(); i++) {
+            Map.entities.get(i).render(g);
+        }
     }
     
     private static void tileRender(Graphics g) {		

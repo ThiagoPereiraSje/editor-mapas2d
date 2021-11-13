@@ -4,6 +4,8 @@
  */
 package elements;
 
+import java.util.ArrayList;
+import java.util.List;
 import tiles.Grid;
 
 /**
@@ -16,6 +18,7 @@ public class Map {
     public static int w_vts;
     public static int h_vts;
     public static Tile[] tiles;
+    public static List<Entity> entities = new ArrayList<Entity>();
     
     public Map(int w, int h) {
         width = (int) w/Tile.size;
@@ -34,5 +37,17 @@ public class Map {
                 tiles[index] = new Grid(xx * Tile.size, yy * Tile.size);
             }
         }
+    }
+    
+    public static int contains(int x, int y) {
+        for(int i=0; i < entities.size(); i++) {
+            Entity e = entities.get(i);
+            
+            if (x == e.x && y == e.y){
+                return i;
+            }
+        }
+        
+        return -1;
     }
 }

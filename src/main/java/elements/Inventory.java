@@ -5,7 +5,6 @@
  */
 package elements;
 
-import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
@@ -20,15 +19,18 @@ public class Inventory {
     public static File itemSelected;
     
     private static void insertElement(int xx, int yy) {
+        Image sprite = new ImageIcon(itemSelected.getPath()).getImage();
+        
         if (itemType == ItemType.TILE) {
-            Image sprite = new ImageIcon(itemSelected.getPath()).getImage();
-
             Map.tiles[xx + (yy*Map.width)] = new Tile(
                 xx *Tile.size, 
                 yy *Tile.size, 
                 sprite
             );
         } else if (itemType == ItemType.ENTITY) {
+            if (Map.contains(xx *Tile.size, yy *Tile.size) == -1) {
+                Map.entities.add(new Entity(xx *Tile.size, yy *Tile.size, sprite));
+            }
         }
     }
     
@@ -39,6 +41,11 @@ public class Inventory {
                 yy *Tile.size
             );
         } else if (itemType == ItemType.ENTITY) {
+            int index = Map.contains(xx *Tile.size, yy *Tile.size);
+            
+            if (index > -1) {
+                Map.entities.remove(index);
+            }
         }
     }
     
@@ -94,6 +101,7 @@ public class Inventory {
             int yy = cy/Tile.size;
             
             insertElement(xx, yy);
+            
         } else if (Keyboard.shift) {
             int cx = Cursor.x;
             int cy = Cursor.y;
@@ -109,8 +117,5 @@ public class Inventory {
             
             removeElement(xx, yy);
         }
-    }
-    
-    public static void render(Graphics g) {
     }
 }

@@ -37,6 +37,6 @@ public class Entity {
     }
     
     public void render(Graphics g) {
-        g.drawImage(sprite, x, y, width, height, null);
+        g.drawImage(sprite, x - Camera.x, y - Camera.y, width, height, null);
     }
 }
