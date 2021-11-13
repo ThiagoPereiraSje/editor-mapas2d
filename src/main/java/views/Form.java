@@ -5,8 +5,7 @@
  */
 package views;
 
-import elements.Canvas;
-import elements.Funcs;
+import elements.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -398,7 +397,9 @@ public class Form extends javax.swing.JFrame {
         File f = entitySpriteList.getSelectedValue();
         
         if (f != null) {
-            JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
+            Inventory.itemType = ItemType.ENTITY;
+            Inventory.itemSelected = f;
+            //JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
         }
     }//GEN-LAST:event_entitySpriteListValueChanged
 
@@ -406,7 +407,9 @@ public class Form extends javax.swing.JFrame {
         File f = tileSpriteList.getSelectedValue();
         
         if (f != null) {
-            JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
+            Inventory.itemType = ItemType.TILE;
+            Inventory.itemSelected = f;
+            //JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
         }
     }//GEN-LAST:event_tileSpriteListValueChanged
 

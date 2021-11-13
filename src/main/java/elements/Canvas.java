@@ -23,18 +23,20 @@ public class Canvas extends java.awt.Canvas implements Runnable{
     private Map map;
     private BufferStrategy bs;
     private Keyboard keyboard;
+    private Mouse mouse;
     
     public Canvas() {
-        image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        
         createBufferStrategy(1);
-        bs = getBufferStrategy();
-        
-        keyboard = new Keyboard();
-        addKeyListener(keyboard);
-        
         setSize(width, height);
         setBackground(Color.BLACK);
+        
+        bs = getBufferStrategy();
+        mouse = new Mouse();
+        keyboard = new Keyboard();
+        image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+        
+        addMouseListener(mouse);
+        addKeyListener(keyboard);
     }
     
     public synchronized void start() {
@@ -57,6 +59,7 @@ public class Canvas extends java.awt.Canvas implements Runnable{
     public void tick() {
         // Lógica do jogo aqui.
         World.tick();
+        Inventory.tick();
         Cursor.tick();
     }
     

@@ -4,9 +4,8 @@
  */
 package elements;
 
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
+import java.awt.Image;
 
 /**
  *
@@ -15,9 +14,9 @@ import java.awt.image.BufferedImage;
 public class Tile {
     public static final int size = 32;        
     public int x,y;
-    public BufferedImage sprite;
+    public Image sprite;
     
-    public Tile(int x, int y, BufferedImage sprite) {
+    public Tile(int x, int y, Image sprite) {
         this.x = x;
         this.y = y;
         this.sprite = sprite;
