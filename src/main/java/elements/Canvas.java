@@ -51,8 +51,8 @@ public class Canvas extends java.awt.Canvas implements Runnable{
         map = new Map(w, h);
     }
     
-    public boolean mapIsEmpty() {
-        return Map.isEmpty();
+    public Map getMap() {
+        return map;
     }
     
     public synchronized void stop() {

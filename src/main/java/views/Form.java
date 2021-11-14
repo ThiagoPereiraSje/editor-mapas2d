@@ -5,6 +5,7 @@
  */
 package views;
 
+import com.google.gson.Gson;
 import elements.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -126,6 +127,11 @@ public class Form extends javax.swing.JFrame {
 
         btSaveMap.setText("Salvar Mapa");
         btSaveMap.setEnabled(false);
+        btSaveMap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaveMapActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tabMapLayout = new javax.swing.GroupLayout(tabMap);
         tabMap.setLayout(tabMapLayout);
@@ -357,7 +363,7 @@ public class Form extends javax.swing.JFrame {
         int width = Integer.parseInt(tfWidth.getText()) * 32;
         int height = Integer.parseInt(tfHight.getText()) * 32;
         
-        if (!canvas.mapIsEmpty()) {
+        if (!Map.isEmpty()) {
             int option = JOptionPane.showConfirmDialog(
                 canvas, 
                 "Deseja resetar o Mapa?",
@@ -407,6 +413,10 @@ public class Form extends javax.swing.JFrame {
             canvas.requestFocus();
         }
     }//GEN-LAST:event_tileSpriteListValueChanged
+
+    private void btSaveMapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveMapActionPerformed
+        System.out.println(new Gson().toJson(canvas.getMap()));
+    }//GEN-LAST:event_btSaveMapActionPerformed
 
     /**
      * @param args the command line arguments
