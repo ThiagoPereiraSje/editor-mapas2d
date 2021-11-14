@@ -77,8 +77,6 @@ public class Form extends javax.swing.JFrame {
         lbHeight = new javax.swing.JLabel();
         tfHight = new javax.swing.JTextField();
         btCriar = new javax.swing.JButton();
-        btIniciar = new javax.swing.JButton();
-        btParar = new javax.swing.JButton();
         tabEntidades = new javax.swing.JPanel();
         entitySpritesProps = new javax.swing.JTabbedPane();
         entitySprites = new javax.swing.JPanel();
@@ -119,22 +117,6 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
-        btIniciar.setText("Iniciar");
-        btIniciar.setEnabled(false);
-        btIniciar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btIniciarActionPerformed(evt);
-            }
-        });
-
-        btParar.setText("Parar");
-        btParar.setEnabled(false);
-        btParar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btPararActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout tabMapLayout = new javax.swing.GroupLayout(tabMap);
         tabMap.setLayout(tabMapLayout);
         tabMapLayout.setHorizontalGroup(
@@ -145,19 +127,12 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(lbHeight)
                     .addComponent(lbWidth))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(tabMapLayout.createSequentialGroup()
-                        .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(tfHight, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(tfWidth))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(tabMapLayout.createSequentialGroup()
-                        .addComponent(btIniciar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btParar)
-                        .addGap(39, 39, 39))))
+                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfHight, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                    .addComponent(tfWidth))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         tabMapLayout.setVerticalGroup(
             tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,11 +148,7 @@ public class Form extends javax.swing.JFrame {
                             .addComponent(lbHeight)
                             .addComponent(tfHight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btCriar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btParar)
-                    .addComponent(btIniciar))
-                .addContainerGap(472, Short.MAX_VALUE))
+                .addContainerGap(506, Short.MAX_VALUE))
         );
 
         tabPanel.addTab("Mapa", tabMap);
@@ -362,26 +333,25 @@ public class Form extends javax.swing.JFrame {
         int width = Integer.parseInt(tfWidth.getText()) * 32;
         int height = Integer.parseInt(tfHight.getText()) * 32;
         
-        canvas.createMap(width, height);
-        canvas.start();
-        btIniciar.setEnabled(false);
-        btCriar.setEnabled(false);
-        btParar.setEnabled(true);
+        if (!canvas.mapIsEmpty()) {
+            int option = JOptionPane.showConfirmDialog(
+                canvas, 
+                "Deseja resetar o Mapa?",
+                "Atenção", 
+                JOptionPane.YES_NO_OPTION);
+            
+            if (option == JOptionPane.YES_OPTION) {
+                canvas.createMap(width, height);
+                canvas.requestFocus();
+            }
+            
+        } else {
+            canvas.createMap(width, height);
+            canvas.start();
+            btCriar.setText("Reset");
+            canvas.requestFocus();
+        }
     }//GEN-LAST:event_btCriarActionPerformed
-
-    private void btPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPararActionPerformed
-        canvas.stop();
-        btIniciar.setEnabled(true);
-        btCriar.setEnabled(false);
-        btParar.setEnabled(false);
-    }//GEN-LAST:event_btPararActionPerformed
-
-    private void btIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btIniciarActionPerformed
-        canvas.start();
-        btIniciar.setEnabled(false);
-        btCriar.setEnabled(false);
-        btParar.setEnabled(true);
-    }//GEN-LAST:event_btIniciarActionPerformed
 
     private void cbEntitySpritesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEntitySpritesActionPerformed
         entity = entities[cbEntitySprites.getSelectedIndex()];
@@ -399,7 +369,7 @@ public class Form extends javax.swing.JFrame {
         if (f != null) {
             Inventory.itemType = ItemType.ENTITY;
             Inventory.itemSelected = f;
-            //JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
+            canvas.requestFocus();
         }
     }//GEN-LAST:event_entitySpriteListValueChanged
 
@@ -409,7 +379,7 @@ public class Form extends javax.swing.JFrame {
         if (f != null) {
             Inventory.itemType = ItemType.TILE;
             Inventory.itemSelected = f;
-            //JOptionPane.showMessageDialog(this, "Fui Selecionado! "+ f.getName());
+            canvas.requestFocus();
         }
     }//GEN-LAST:event_tileSpriteListValueChanged
 
@@ -450,8 +420,6 @@ public class Form extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCriar;
-    private javax.swing.JButton btIniciar;
-    private javax.swing.JButton btParar;
     private javax.swing.JPanel canvasArea;
     private javax.swing.JComboBox<String> cbEntitySprites;
     private javax.swing.JComboBox<String> cbTileSprites;

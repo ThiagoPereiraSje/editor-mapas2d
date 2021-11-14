@@ -50,4 +50,8 @@ public class Map {
         
         return -1;
     }
+    
+    public static boolean isEmpty() {
+        return (tiles == null || tiles.length == 0);
+    }
 }
