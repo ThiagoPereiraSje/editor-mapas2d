@@ -86,12 +86,22 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="tfHight" pref="72" max="32767" attributes="0"/>
-                          <Component id="tfWidth" max="32767" attributes="0"/>
+                          <Component id="tfWidth" pref="29" max="32767" attributes="0"/>
+                          <Component id="tfHight" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                              <Component id="lbwx32px" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lbhx32px" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btCriar" min="-2" pref="66" max="-2" attributes="0"/>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="16" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -104,11 +114,13 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lbWidth" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tfWidth" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbwx32px" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="lbHeight" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="tfHight" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbhx32px" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="btCriar" max="32767" attributes="0"/>
@@ -136,7 +148,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="tfHight">
               <Properties>
-                <Property name="text" type="java.lang.String" value="50"/>
+                <Property name="text" type="java.lang.String" value="18"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btCriar">
@@ -146,6 +158,16 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCriarActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbwx32px">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x32px"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lbhx32px">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="x32px"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

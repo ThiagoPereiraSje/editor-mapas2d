@@ -77,6 +77,8 @@ public class Form extends javax.swing.JFrame {
         lbHeight = new javax.swing.JLabel();
         tfHight = new javax.swing.JTextField();
         btCriar = new javax.swing.JButton();
+        lbwx32px = new javax.swing.JLabel();
+        lbhx32px = new javax.swing.JLabel();
         tabEntidades = new javax.swing.JPanel();
         entitySpritesProps = new javax.swing.JTabbedPane();
         entitySprites = new javax.swing.JPanel();
@@ -108,7 +110,7 @@ public class Form extends javax.swing.JFrame {
 
         lbHeight.setText("Altura:");
 
-        tfHight.setText("50");
+        tfHight.setText("18");
 
         btCriar.setText("Criar");
         btCriar.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +118,10 @@ public class Form extends javax.swing.JFrame {
                 btCriarActionPerformed(evt);
             }
         });
+
+        lbwx32px.setText("x32px");
+
+        lbhx32px.setText("x32px");
 
         javax.swing.GroupLayout tabMapLayout = new javax.swing.GroupLayout(tabMap);
         tabMap.setLayout(tabMapLayout);
@@ -128,11 +134,18 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(lbWidth))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tfHight, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                    .addComponent(tfWidth))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(tfWidth, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                    .addComponent(tfHight))
+                .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabMapLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(lbwx32px))
+                    .addGroup(tabMapLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbhx32px)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         tabMapLayout.setVerticalGroup(
             tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,11 +155,13 @@ public class Form extends javax.swing.JFrame {
                     .addGroup(tabMapLayout.createSequentialGroup()
                         .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbWidth)
-                            .addComponent(tfWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfWidth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbwx32px))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(tabMapLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbHeight)
-                            .addComponent(tfHight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tfHight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbhx32px)))
                     .addComponent(btCriar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(506, Short.MAX_VALUE))
         );
@@ -430,6 +445,8 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JTabbedPane entitySpritesProps;
     private javax.swing.JLabel lbHeight;
     private javax.swing.JLabel lbWidth;
+    private javax.swing.JLabel lbhx32px;
+    private javax.swing.JLabel lbwx32px;
     private javax.swing.JPanel tabEntidades;
     private javax.swing.JPanel tabMap;
     private javax.swing.JTabbedPane tabPanel;
