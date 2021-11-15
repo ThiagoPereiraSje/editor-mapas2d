@@ -78,7 +78,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btSaveMap" max="32767" attributes="0"/>
@@ -105,6 +105,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btCriar" min="-2" pref="66" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="btLoadMap" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="16" max="32767" attributes="0"/>
                   </Group>
@@ -132,7 +133,9 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btSaveMap" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace pref="455" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btLoadMap" min="-2" pref="45" max="-2" attributes="0"/>
+                      <EmptySpace pref="399" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -183,6 +186,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSaveMapActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btLoadMap">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Carregar Mapa"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btLoadMapActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

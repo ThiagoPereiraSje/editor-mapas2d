@@ -84,6 +84,7 @@ public class Form extends javax.swing.JFrame {
         lbwx32px = new javax.swing.JLabel();
         lbhx32px = new javax.swing.JLabel();
         btSaveMap = new javax.swing.JButton();
+        btLoadMap = new javax.swing.JButton();
         tabEntidades = new javax.swing.JPanel();
         entitySpritesProps = new javax.swing.JTabbedPane();
         entitySprites = new javax.swing.JPanel();
@@ -136,6 +137,13 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        btLoadMap.setText("Carregar Mapa");
+        btLoadMap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLoadMapActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout tabMapLayout = new javax.swing.GroupLayout(tabMap);
         tabMap.setLayout(tabMapLayout);
         tabMapLayout.setHorizontalGroup(
@@ -160,7 +168,8 @@ public class Form extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lbhx32px)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btCriar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btLoadMap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         tabMapLayout.setVerticalGroup(
@@ -181,7 +190,9 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(btCriar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btSaveMap, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(455, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btLoadMap, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(399, Short.MAX_VALUE))
         );
 
         tabPanel.addTab("Mapa", tabMap);
@@ -439,6 +450,21 @@ public class Form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btSaveMapActionPerformed
 
+    private void btLoadMapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoadMapActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File("."));
+        chooser.setDialogTitle("Selecione o arquivo");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Json File", "json");
+        chooser.setFileFilter(filter);
+        
+        int userSelection = chooser.showOpenDialog(this);
+        
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();            
+            System.out.println("path: "+ file.getAbsolutePath());
+        }
+    }//GEN-LAST:event_btLoadMapActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -476,6 +502,7 @@ public class Form extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCriar;
+    private javax.swing.JButton btLoadMap;
     private javax.swing.JButton btSaveMap;
     private javax.swing.JPanel canvasArea;
     private javax.swing.JComboBox<String> cbEntitySprites;
