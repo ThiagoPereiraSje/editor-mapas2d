@@ -9,6 +9,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import json.JsonMap;
 
 /**
  *
@@ -51,8 +52,13 @@ public class Canvas extends java.awt.Canvas implements Runnable{
         map = new Map(w, h);
     }
     
-    public Map getMap() {
-        return map;
+    public JsonMap getJSON() {
+        return new JsonMap(
+            map.width, 
+            map.height,
+            map.w_vts,
+            map.h_vts
+        );
     }
     
     public synchronized void stop() {

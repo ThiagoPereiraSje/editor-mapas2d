@@ -415,7 +415,7 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_tileSpriteListValueChanged
 
     private void btSaveMapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveMapActionPerformed
-        System.out.println(new Gson().toJson(canvas.getMap()));
+        System.out.println(new Gson().toJson(canvas.getJSON()));
     }//GEN-LAST:event_btSaveMapActionPerformed
 
     /**
