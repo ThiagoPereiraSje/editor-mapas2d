@@ -14,10 +14,10 @@ import java.awt.Graphics;
  * @author thiago
  */
 public class Grid extends Tile {
-    
+
     public Grid(int x, int y) {
-        super(x, y, null);
-    }
+        super(x, y);
+    }    
     
     @Override
     public void render(Graphics g) {
