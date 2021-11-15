@@ -5,9 +5,7 @@
  */
 package elements;
 
-import java.awt.Image;
 import java.io.File;
-import javax.swing.ImageIcon;
 import tiles.Grid;
 
 /**
@@ -18,18 +16,20 @@ public class Inventory {
     public static ItemType itemType = ItemType.TILE;
     public static File itemSelected;
     
-    private static void insertElement(int xx, int yy) {
-        Image sprite = new ImageIcon(itemSelected.getPath()).getImage();
-        
+    private static void insertElement(int xx, int yy) {        
         if (itemType == ItemType.TILE) {
             Map.tiles[xx + (yy*Map.width)] = new Tile(
                 xx *Tile.size, 
                 yy *Tile.size, 
-                sprite
+                itemSelected.getPath()
             );
         } else if (itemType == ItemType.ENTITY) {
             if (Map.contains(xx *Tile.size, yy *Tile.size) == -1) {
-                Map.entities.add(new Entity(xx *Tile.size, yy *Tile.size, sprite));
+                Map.entities.add(new Entity(
+                    xx *Tile.size, 
+                    yy *Tile.size, 
+                    itemSelected.getPath()
+                ));
             }
         }
     }

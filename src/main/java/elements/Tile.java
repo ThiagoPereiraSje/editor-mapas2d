@@ -6,6 +6,7 @@ package elements;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -14,17 +15,19 @@ import java.awt.Image;
 public class Tile {
     public static final int size = 32;        
     public int x,y;
-    public Image sprite;
+    public String path;
+    private Image sprite;
     
     public Tile(int x, int y) {
         this.x = x;
         this.y = y;
     }
     
-    public Tile(int x, int y, Image sprite) {
+    public Tile(int x, int y, String path) {
         this.x = x;
         this.y = y;
-        this.sprite = sprite;
+        this.path = path;
+        this.sprite = new ImageIcon(path).getImage();
     }
     
     public void render(Graphics g) {

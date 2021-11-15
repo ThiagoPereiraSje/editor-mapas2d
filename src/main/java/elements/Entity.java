@@ -7,6 +7,7 @@ package elements;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -15,22 +16,25 @@ import java.awt.Image;
 public class Entity {
     public int x,y;
     public int width, height;
+    public String path;
     private Image sprite;
     
-    public Entity(int x, int y, Image sprite) {
+    public Entity(int x, int y, String path) {
         this.x = x;
         this.y = y;
         this.width = 32;
         this.height = 32;
-        this.sprite = sprite;
+        this.path = path;
+        this.sprite = new ImageIcon(path).getImage();
     }
     
-    public Entity(int x, int y, int w, int h, Image sprite) {
+    public Entity(int x, int y, int w, int h, String path) {
         this.x = x;
         this.y = y;
         this.width = w;
         this.height = h;
-        this.sprite = sprite;
+        this.path = path;
+        this.sprite = new ImageIcon(path).getImage();
     }
     
     public void tick() {
