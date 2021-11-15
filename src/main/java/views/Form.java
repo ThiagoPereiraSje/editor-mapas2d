@@ -466,8 +466,13 @@ public class Form extends javax.swing.JFrame {
             Gson gson = new Gson();
             JsonMap map = gson.fromJson(json, JsonMap.class);
             
-            System.out.println("map width: "+ map.width);
-            System.out.println("map w_vts: "+ map.w_vts);
+            canvas.loadMap(map);
+            canvas.start();
+            canvas.requestFocus();
+            
+            btCriar.setText("Reset");
+            btSaveMap.setEnabled(true);
+            btLoadMap.setEnabled(false);
         }
     }//GEN-LAST:event_btLoadMapActionPerformed
 
