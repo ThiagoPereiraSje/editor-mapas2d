@@ -22,8 +22,8 @@ public class Entity {
     public Entity(int x, int y, String path) {
         this.x = x;
         this.y = y;
-        this.width = 32;
-        this.height = 32;
+        this.width = 64;
+        this.height = 64;
         this.path = path;
         this.sprite = new ImageIcon(path).getImage();
     }
