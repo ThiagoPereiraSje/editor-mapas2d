@@ -57,7 +57,8 @@ public class Canvas extends java.awt.Canvas implements Runnable{
             map.width, 
             map.height,
             map.w_vts,
-            map.h_vts
+            map.h_vts,
+            map.tiles
         );
     }
     
