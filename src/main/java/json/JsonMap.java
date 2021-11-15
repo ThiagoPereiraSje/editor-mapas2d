@@ -19,6 +19,9 @@ public class JsonMap {
     private JsonTile[] tiles;
     private JsonEntity[] entities;
     
+    public JsonMap() {
+    }
+    
     public JsonMap(Map map) {
         this.width = map.width;
         this.height = map.height;

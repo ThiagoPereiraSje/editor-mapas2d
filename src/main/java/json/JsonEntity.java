@@ -16,6 +16,9 @@ public class JsonEntity {
     private int width, height;
     private String path;
     
+    public JsonEntity() {
+    }
+    
     public JsonEntity(Entity e) {
         this.x = e.x;
         this.y = e.y;

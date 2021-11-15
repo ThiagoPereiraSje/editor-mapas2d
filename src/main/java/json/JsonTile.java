@@ -13,7 +13,10 @@ import elements.Tile;
  */
 public class JsonTile {
     private int x,y;
-    private String path;  
+    private String path;
+    
+    public JsonTile() {
+    }
     
     public JsonTile(Tile tile) {
         this.x = tile.x;
