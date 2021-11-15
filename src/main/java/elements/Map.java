@@ -6,6 +6,9 @@ package elements;
 
 import java.util.ArrayList;
 import java.util.List;
+import json.JsonEntity;
+import json.JsonMap;
+import json.JsonTile;
 import tiles.Grid;
 
 /**
@@ -28,6 +31,29 @@ public class Map {
         tiles = new Tile[width * height];
         
         fill();
+    }
+    
+    public Map(JsonMap map) {
+        width = map.width;
+        height = map.height;
+        w_vts = map.w_vts;
+        h_vts = map.h_vts;
+        tiles = new Tile[map.tiles.length];
+        
+        for (int i = 0; i < map.tiles.length; i++) {
+            JsonTile jt = map.tiles[i];
+            
+            if (jt.path != null) {
+                tiles[i] = new Tile(jt.x, jt.y, jt.path);
+            } else {
+                tiles[i] = new Grid(jt.x, jt.y);
+            }
+        }
+        
+        for (int i = 0; i < map.entities.length; i++) {
+            JsonEntity je = map.entities[i];
+            entities.add(new Entity(je.x, je.y, je.width, je.height, je.path));
+        }
     }
     
     private void fill() {        
