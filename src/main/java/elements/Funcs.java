@@ -18,10 +18,9 @@ public class Funcs {
         return file.listFiles();
     }
     
-    public static String readFile(final String path) {
+    public static String readFile(File file) {
         try {
             StringBuilder data = new StringBuilder();
-            File file = new File(path);
             
             if (file.exists()) {
                 Scanner reader = new Scanner(file);

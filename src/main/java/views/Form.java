@@ -461,7 +461,9 @@ public class Form extends javax.swing.JFrame {
         
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();            
-            System.out.println("path: "+ file.getAbsolutePath());
+            String json = Funcs.readFile(file);
+            
+            //System.out.println("json: "+json);
         }
     }//GEN-LAST:event_btLoadMapActionPerformed
 
