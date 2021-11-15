@@ -53,13 +53,7 @@ public class Canvas extends java.awt.Canvas implements Runnable{
     }
     
     public JsonMap getJSON() {
-        return new JsonMap(
-            map.width, 
-            map.height,
-            map.w_vts,
-            map.h_vts,
-            map.tiles
-        );
+        return new JsonMap(map);
     }
     
     public synchronized void stop() {

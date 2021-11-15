@@ -5,7 +5,7 @@
  */
 package json;
 
-import elements.Tile;
+import elements.Map;
 
 /**
  *
@@ -17,17 +17,22 @@ public class JsonMap {
     private int w_vts;
     private int h_vts;
     private JsonTile[] tiles;
+    private JsonEntity[] entities;
     
-    public JsonMap(int w, int h, int w_vts, int h_vts, Tile[] tiles) {
-        this.width = w;
-        this.height = h;
-        this.w_vts = w_vts;
-        this.h_vts = h_vts;
-        this.tiles = new JsonTile[tiles.length];
+    public JsonMap(Map map) {
+        this.width = map.width;
+        this.height = map.height;
+        this.w_vts = map.w_vts;
+        this.h_vts = map.h_vts;
+        this.tiles = new JsonTile[map.tiles.length];
+        this.entities = new JsonEntity[map.entities.size()];
         
-        for (int i = 0; i < tiles.length; i++) {
-            Tile t = tiles[i];
-            this.tiles[i] = new JsonTile(t.x, t.y, t.path);
+        for (int i = 0; i < map.tiles.length; i++) {
+            this.tiles[i] = new JsonTile(map.tiles[i]);
+        }
+        
+        for (int i = 0; i < map.entities.size(); i++) {
+            this.entities[i] = new JsonEntity(map.entities.get(i));
         }
     }
 }

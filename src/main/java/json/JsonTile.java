@@ -5,6 +5,8 @@
  */
 package json;
 
+import elements.Tile;
+
 /**
  *
  * @author thiago
@@ -13,9 +15,9 @@ public class JsonTile {
     private int x,y;
     private String path;  
     
-    public JsonTile(int x, int y, String path) {
-        this.x = x;
-        this.y = y;
-        this.path = path;
+    public JsonTile(Tile tile) {
+        this.x = tile.x;
+        this.y = tile.y;
+        this.path = tile.path;
     }
 }
