@@ -44,7 +44,7 @@ public class Form extends javax.swing.JFrame {
         entitySpriteList.setCellRenderer(new ImageListRenderer());
         tileSpriteList.setCellRenderer(new ImageListRenderer());
         
-        addWindowListener(new WindowAdapter() {
+        /*addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 int option = JOptionPane.showConfirmDialog(
@@ -60,7 +60,7 @@ public class Form extends javax.swing.JFrame {
                         fileName = "mapa01";
                 }
             }
-        });
+        });*/
         
         canvas = new Canvas();
         canvasArea.add(canvas);

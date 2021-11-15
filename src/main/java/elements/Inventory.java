@@ -32,6 +32,9 @@ public class Inventory {
                 ));
             }
         }
+        
+        Cursor.x = xx *Tile.size;
+        Cursor.y = yy *Tile.size;
     }
     
     private static void removeElement(int xx, int yy) {
@@ -47,6 +50,9 @@ public class Inventory {
                 Map.entities.remove(index);
             }
         }
+        
+        Cursor.x = xx *Tile.size;
+        Cursor.y = yy *Tile.size;
     }
     
     public static void tick() {
