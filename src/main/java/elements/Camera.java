@@ -18,9 +18,9 @@ public class Camera {
     }
     
     public static void update(double x, double y) {
-        double curX = x - (Canvas.width - (Tile.size*2));///2);
+        double curX = x - (Canvas.width/2);
         double maxX = Map.w_vts; // - Window.width;
-        double curY = y - (Canvas.height - (Tile.size*2));///2);
+        double curY = y - (Canvas.height/2);
         double maxY = Map.h_vts; // - Window.height;
 
         Camera.x = clamp(curX, 0, maxX);
