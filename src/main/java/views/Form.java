@@ -14,6 +14,7 @@ import java.io.FileWriter;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import json.JsonMap;
 
 /**
  *
@@ -462,8 +463,11 @@ public class Form extends javax.swing.JFrame {
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();            
             String json = Funcs.readFile(file);
+            Gson gson = new Gson();
+            JsonMap map = gson.fromJson(json, JsonMap.class);
             
-            //System.out.println("json: "+json);
+            System.out.println("map width: "+ map.width);
+            System.out.println("map w_vts: "+ map.w_vts);
         }
     }//GEN-LAST:event_btLoadMapActionPerformed
 

@@ -12,12 +12,12 @@ import elements.Map;
  * @author thiago
  */
 public class JsonMap {
-    private int width;
-    private int height;
-    private int w_vts;
-    private int h_vts;
-    private JsonTile[] tiles;
-    private JsonEntity[] entities;
+    public int width;
+    public int height;
+    public int w_vts;
+    public int h_vts;
+    public JsonTile[] tiles;
+    public JsonEntity[] entities;
     
     public JsonMap() {
     }
