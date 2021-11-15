@@ -12,8 +12,8 @@ import elements.Tile;
  * @author thiago
  */
 public class JsonTile {
-    private int x,y;
-    private String path;
+    public int x,y;
+    public String path;
     
     public JsonTile() {
     }

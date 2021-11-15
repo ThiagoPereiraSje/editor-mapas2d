@@ -12,9 +12,9 @@ import elements.Entity;
  * @author thiago
  */
 public class JsonEntity {
-    private int x,y;
-    private int width, height;
-    private String path;
+    public int x,y;
+    public int width, height;
+    public String path;
     
     public JsonEntity() {
     }
