@@ -22,9 +22,9 @@ import json.JsonMap;
  */
 public class Form extends javax.swing.JFrame {
     private Canvas canvas;
-    private final File[] entities = Funcs.loadPath("assets/entities");
+    private final File[] entities = Funcs.loadPath("assets/entidades");
     private File entity;
-    private final File[] tiles = Funcs.loadPath("assets/tiles");
+    private final File[] tiles = Funcs.loadPath("assets/piso");
     private File tile;
     
     /**
