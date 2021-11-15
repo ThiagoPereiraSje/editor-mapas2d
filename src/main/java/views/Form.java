@@ -10,7 +10,10 @@ import elements.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FileWriter;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -415,7 +418,25 @@ public class Form extends javax.swing.JFrame {
     }//GEN-LAST:event_tileSpriteListValueChanged
 
     private void btSaveMapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveMapActionPerformed
-        System.out.println(new Gson().toJson(canvas.getJSON()));
+        JFileChooser chooser = new JFileChooser();
+        chooser.setCurrentDirectory(new File("."));
+        chooser.setDialogTitle("Selecione o local para salvar");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Json File", "json");
+        chooser.setFileFilter(filter);
+        
+        int userSelection = chooser.showSaveDialog(this);
+        
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();            
+            try {
+                FileWriter writer = new FileWriter(file.getAbsolutePath());
+                String content = new Gson().toJson(canvas.getJSON());
+                writer.write(content);
+                writer.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_btSaveMapActionPerformed
 
     /**
