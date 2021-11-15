@@ -336,7 +336,7 @@ public class Form extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        tabPanel.addTab("Tiles", tabTiles);
+        tabPanel.addTab("Piso", tabTiles);
 
         canvasArea.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -395,6 +395,7 @@ public class Form extends javax.swing.JFrame {
             canvas.start();
             btCriar.setText("Reset");
             btSaveMap.setEnabled(true);
+            btLoadMap.setEnabled(false);
             canvas.requestFocus();
         }
     }//GEN-LAST:event_btCriarActionPerformed
