@@ -24,6 +24,7 @@ public class Inventory {
                 yy *Tile.size, 
                 itemSelected.getPath()
             );
+            
         } else if (itemType == ItemType.ENTITY) {
             if (Map.contains(xx *Tile.size, yy *Tile.size) == -1) {
                 Map.entities.add(new Entity(
@@ -34,8 +35,10 @@ public class Inventory {
             }
         }
         
-        Cursor.x = xx *Tile.size;
-        Cursor.y = yy *Tile.size;
+        Cursor.size = itemSize;
+        Cursor.move(xx *Tile.size, yy *Tile.size);
+        //Cursor.x = xx *Tile.size;
+        //Cursor.y = yy *Tile.size;
     }
     
     private static void removeElement(int xx, int yy) {
@@ -52,8 +55,10 @@ public class Inventory {
             }
         }
         
-        Cursor.x = xx *Tile.size;
-        Cursor.y = yy *Tile.size;
+        Cursor.size = itemSize;
+        Cursor.move(xx *Tile.size, yy *Tile.size);
+        //Cursor.x = xx *Tile.size;
+        //Cursor.y = yy *Tile.size;
     }
     
     public static void tick() {

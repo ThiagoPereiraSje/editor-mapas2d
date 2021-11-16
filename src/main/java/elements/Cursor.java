@@ -12,10 +12,35 @@ import java.awt.Graphics;
  * @author thiago
  */
 public class Cursor {
+    public static int size = 32;
     public static int x=0,y=0;
     
+    public static void move(int xx, int yy) {
+        if ((yy >= 0) && (yy <= (Map.h_vts - size))) {
+            y = yy;
+        }
+        
+        if ((xx >= 0)&&(xx <= (Map.w_vts - size))){
+            x = xx;
+        }
+        
+        Camera.update(x, y);
+    }
+    
     public static void tick() {
-        if (Keyboard.up && y > 0) {
+        if (Keyboard.up) {
+            move(x, y-size);
+        } else if (Keyboard.down) {
+            move(x, y+size);
+        }
+        
+        if (Keyboard.left) {
+            move(x-size, y);
+        } else if (Keyboard.right) {
+            move(x+size, y);
+        }
+        
+        /*if (Keyboard.up && y > 0) {
             y -= Tile.size;
         } else if (Keyboard.down && y < (Map.h_vts -Tile.size)) {
             y += Tile.size;
@@ -27,11 +52,11 @@ public class Cursor {
             x += Tile.size;
         }
 
-        Camera.update(x, y);
+        Camera.update(x, y);*/
     }
     
     public static void render(Graphics g) {
         g.setColor(Color.RED);
-        g.drawRect(x -Camera.x, y -Camera.y, Tile.size, Tile.size);
+        g.drawRect(x -Camera.x, y -Camera.y, size, size);
     }
 }
