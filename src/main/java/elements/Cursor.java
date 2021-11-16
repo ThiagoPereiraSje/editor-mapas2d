@@ -23,8 +23,6 @@ public class Cursor {
         if ((xx >= 0)&&(xx <= (Map.w_vts - size))){
             x = xx;
         }
-        
-        Camera.update(x, y);
     }
     
     public static void tick() {
@@ -39,20 +37,6 @@ public class Cursor {
         } else if (Keyboard.right) {
             move(x+size, y);
         }
-        
-        /*if (Keyboard.up && y > 0) {
-            y -= Tile.size;
-        } else if (Keyboard.down && y < (Map.h_vts -Tile.size)) {
-            y += Tile.size;
-        }
-
-        if (Keyboard.left && x > 0) {
-            x -= Tile.size;
-        } else if (Keyboard.right && x < (Map.w_vts -Tile.size)) {
-            x += Tile.size;
-        }
-
-        Camera.update(x, y);*/
     }
     
     public static void render(Graphics g) {

@@ -3,27 +3,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package elements;
+
+//import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author thiago
  */
 public class Camera {
+    public static final int width = 32*33;
+    public static final int height = 32*18;
     public static int x = 0;
     public static int y = 0;
     
-    private static int clamp(double current, double min, double max) {
-        if (current < min) current = min;
-        if (current > max) current = max;
-        return (int)(current);
+    public static void tick() {
+        if (Cursor.x >= (x+width)) {
+            x += Tile.size;
+        } else if (Cursor.x <= (x - Tile.size)) {
+            x -= Tile.size;
+        }
+        
+        if (Cursor.y >= (y+height)) {
+            y += Tile.size;
+        } else if (Cursor.y <= (y - Tile.size)) {
+            y -= Tile.size;
+        }
     }
     
-    public static void update(double x, double y) {
-        double curX = x - (Canvas.width/2);
-        double maxX = Map.w_vts; // - Window.width;
-        double curY = y - (Canvas.height/2);
-        double maxY = Map.h_vts; // - Window.height;
-
-        Camera.x = clamp(curX, 0, maxX);
-        Camera.y = clamp(curY, 0, maxY);
+    public static void render(Graphics g) {        
+        //g.setColor(Color.CYAN);
+        //g.drawRect(x - Camera.x, y - Camera.y, width, height);
     }
 }

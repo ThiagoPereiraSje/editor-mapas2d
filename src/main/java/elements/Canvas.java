@@ -72,6 +72,7 @@ public class Canvas extends java.awt.Canvas implements Runnable{
         World.tick();
         Inventory.tick();
         Cursor.tick();
+        Camera.tick();
     }
     
     public void render() {        
@@ -83,6 +84,7 @@ public class Canvas extends java.awt.Canvas implements Runnable{
         // Renderizar os elementos do jogo aqui!
         World.render(g);
         Cursor.render(g);
+        Camera.render(g);
         
         g.dispose();
 
