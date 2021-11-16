@@ -14,6 +14,7 @@ import tiles.Grid;
  */
 public class Inventory {
     public static ItemType itemType = ItemType.TILE;
+    public static int itemSize = 32;
     public static File itemSelected;
     
     private static void insertElement(int xx, int yy) {        

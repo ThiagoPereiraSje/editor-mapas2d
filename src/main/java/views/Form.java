@@ -11,6 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileWriter;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -414,8 +415,10 @@ public class Form extends javax.swing.JFrame {
         File f = entitySpriteList.getSelectedValue();
         
         if (f != null) {
+            ImageIcon image = new ImageIcon(f.getPath());
+            Inventory.itemSize = image.getIconWidth();
             Inventory.itemType = ItemType.ENTITY;
-            Inventory.itemSelected = f;
+            Inventory.itemSelected = f;            
             canvas.requestFocus();
         }
     }//GEN-LAST:event_entitySpriteListValueChanged
@@ -424,6 +427,8 @@ public class Form extends javax.swing.JFrame {
         File f = tileSpriteList.getSelectedValue();
         
         if (f != null) {
+            ImageIcon image = new ImageIcon(f.getPath());
+            Inventory.itemSize = image.getIconWidth();
             Inventory.itemType = ItemType.TILE;
             Inventory.itemSelected = f;
             canvas.requestFocus();
