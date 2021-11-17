@@ -1,4 +1,4 @@
-# Editor de Mapas 2D.
+# Editor de Mapas para jogos 2D.
 Exemplo compilado dentro do pacote "**jar-assets.zip**". (A pasta "**assets**" precisa estar junto do executável)
 
 **Instruções**
