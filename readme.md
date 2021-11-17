@@ -7,7 +7,7 @@ Exemplo compilado dentro do pacote "**jar-assets.zip**". (A pasta "**assets**" p
 
 ![foto02](./docs/foto02.png)
 
-![foto03](./docs/foto03.png)
+![foto03](./docs/foto03.PNG)
 
 ![foto04](./docs/foto04.png)
 
